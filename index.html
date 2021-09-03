@@ -4,33 +4,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css"/>
-    <title>Let's Paint!🎨</title>
+    <link rel="stylesheet", href="css/style.css">
+    <title>Momentum</title>
 </head>
 <body>
-    <canvas id="jsCanvas" class="canvas"></canvas>
-    <div class="controls">
-        <div class="controls_range">
-            <input type="range" id="jsRange" min="1" max="20" value="10" steps="1">
-        </div>
+    <!--input의 유효성 검사를 작동시키기 위해서는 form 태그를 사용해야한다.-->
+    <form class="hidden" id="login-form"> 
+        <input required maxlength="15" type="text" placeholder="What is your name?">
+        <button>Log in</button>
+    </form>
 
-        <div class="controls_btns">
-            <button id="jsMode">Fill</button>
-            <button id="jsClear">Clear</button>
-        </div>
+    <h2 id="clock"> 00:00:00</h2>
+    <h1 class="hidden" id="greeting"></h1>
 
-        <div class="controls_colors" if="jsColors">
-            <div class="controls_color jsColor" style="background-color: black;"></div>
-            <div class="controls_color jsColor" style="background-color: white;"></div>
-            <div class="controls_color jsColor" style="background-color: rgb(219, 42, 42);"></div>
-            <div class="controls_color jsColor" style="background-color: rgb(255, 123, 0);"></div>
-            <div class="controls_color jsColor" style="background-color: rgb(255, 196, 0);"></div>            <div class="controls_color jsColor" style="background-color: rgb(81, 119, 64);"></div>
-            <div class="controls_color jsColor" style="background-color: rgb(41, 56, 121);"></div>
-            <div class="controls_color jsColor" style="background-color: rgb(87, 34, 122);"></div>
-            <div class="controls_color jsColor" style="background-color: rgb(168, 81, 135);"></div>
+    <form id="todo-form">
+        <input required type="text" placeholder="Write a To Do and Press Enter.">
+    </form>
+
+    <!--js로 리스트를 추가할 부분-->
+    <div class="scroll">
+        <div class="scrollBlind">
+            <ul id="todo-list"></ul>
         </div>
     </div>
 
-    <script src="js/app.js"></script>
+    <div id="quote">
+        <span></span>
+        <span></span>
+    </div>
+
+    <div id=weather>
+        <span></span>
+        <span></span>
+    </div>
+    
+    <script src="js/greetings.js"></script>
+    <script src="js/clock.js"></script>
+    <script src="js/quotes.js"></script>
+    <script src="js/background.js"></script>
+    <script src="js/todo.js"></script>
+    <script src="js/weather.js"></script>
 </body>
 </html>
